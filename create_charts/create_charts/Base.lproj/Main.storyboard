@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="create_charts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WvQ-7e-PST">
+                                <rect key="frame" x="16" y="68" width="266" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahP-aj-nKb">
+                                <rect key="frame" x="298" y="68" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eQR-DX-7Rc"/>
+                                </constraints>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addValue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CrZ-N6-sms"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Eg-V1-Lin" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="WvQ-7e-PST" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="AS6-l4-pIu"/>
+                            <constraint firstItem="9Eg-V1-Lin" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="COR-Aj-tix"/>
+                            <constraint firstItem="ahP-aj-nKb" firstAttribute="leading" secondItem="WvQ-7e-PST" secondAttribute="trailing" constant="16" id="Kw5-UR-OQJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ahP-aj-nKb" secondAttribute="trailing" constant="16" id="RBa-1n-djK"/>
+                            <constraint firstItem="9Eg-V1-Lin" firstAttribute="top" secondItem="WvQ-7e-PST" secondAttribute="bottom" constant="16" id="Xaq-HH-1vK"/>
+                            <constraint firstItem="WvQ-7e-PST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hqt-tZ-A1c"/>
+                            <constraint firstAttribute="bottom" secondItem="9Eg-V1-Lin" secondAttribute="bottom" id="hxV-zj-Au8"/>
+                            <constraint firstItem="ahP-aj-nKb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="sN6-zW-NzW"/>
+                            <constraint firstItem="9Eg-V1-Lin" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xoI-nd-VS4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2kv-g7-h9O" appends="YES" id="8Zv-Ah-1fb"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="goButton" destination="ahP-aj-nKb" id="dlA-Pr-zmd"/>
+                        <outlet property="lineChartView" destination="9Eg-V1-Lin" id="xDe-NG-Me2"/>
+                        <outlet property="txtTextBox" destination="WvQ-7e-PST" id="qXD-o4-aHb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2kv-g7-h9O"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
